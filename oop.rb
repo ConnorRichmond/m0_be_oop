@@ -51,6 +51,32 @@ p vamp2.drink
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
+class Dragon
+    attr_accessor :name, :rider, :color, :is_hungry
+  
+    def initialize(name, rider, color)
+      @name = name
+      @rider = rider
+      @color = color
+      @is_hungry = true
+      @eat_count = 0
+    end
+  
+    def eat
+      @eat_count += 1
+      @is_hungry = false if @eat_count >= 4
+    end
+  end
+
+dragon1 = Dragon.new("Smaug", "Bilbo", "Red")
+p dragon1
+dragon1.eat
+dragon1.eat
+p dragon1
+dragon1.eat
+dragon1.eat
+p dragon1.is_hungry
+
 
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)

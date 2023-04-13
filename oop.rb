@@ -4,12 +4,28 @@
 # it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
 
 
+class Unicorn
+    attr_accessor :name, :color
+  
+    def initialize(name)
+      @name = name
+      @color = "silver"
+    end
+  
+    def say(message)
+      "*~* #{message} *~*"
+    end
+  end
+unicorn1 = Unicorn.new("Tree Lover")
+p unicorn1.say("Suh my dude")
 
 #  Write a class called Vampire
 #  it should have a dynamic name attribute
 #  it should have a pet attribute, that is a bat, by default BUT it could be dynamic if info is passed in initially
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
+
+
 
 
 #  Write a Dragon class

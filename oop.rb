@@ -86,3 +86,35 @@ p dragon1.is_hungry
 #  it should have an is_adult attribute (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
+
+class Hobbit
+    attr_accessor :name, :disposition, :age, :has_ring
+  
+    def initialize(name, disposition)
+      @name = name
+      @disposition = disposition
+      @age = 0
+      @has_ring = name == "Frodo"
+    end
+  
+    def celebrate_birthday
+      @age += 1
+    end
+  
+    def is_adult
+      @age >= 33
+    end
+  
+    def is_old
+      @age >= 101
+    end
+  end
+
+hobbit1 = Hobbit.new("Peregrin", "A fool of a Took")
+p hobbit1
+hobbit2 = Hobbit.new("Frodo", "Strong")
+p hobbit2
+101.times do
+    hobbit2.celebrate_birthday
+end
+p hobbit2.is_old

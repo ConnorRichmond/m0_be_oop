@@ -5,11 +5,11 @@
 
 
 class Unicorn
-    attr_accessor :name, :color
+    attr_reader :name, :color
   
-    def initialize(name)
+    def initialize(name, color = "Silver")
       @name = name
-      @color = "silver"
+      @color = color
     end
   
     def say(message)
@@ -26,7 +26,7 @@ p unicorn1.say("Suh my dude")
 #  it should have a drink method. When called, the thirsty attribute changes to false
 
 class Vampire
-    attr_accessor :name, :pet, :thirsty
+    attr_reader :name, :pet, :thirsty
   
     def initialize(name, pet="bat")
       @name = name
@@ -52,7 +52,7 @@ p vamp2.drink
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
 class Dragon
-    attr_accessor :name, :rider, :color, :is_hungry
+    attr_reader :name, :rider, :color, :is_hungry, :eat_count
   
     def initialize(name, rider, color)
       @name = name
@@ -88,13 +88,12 @@ p dragon1.is_hungry
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
 
 class Hobbit
-    attr_accessor :name, :disposition, :age, :has_ring
+    attr_reader :name, :disposition, :age
   
     def initialize(name, disposition)
       @name = name
       @disposition = disposition
       @age = 0
-      @has_ring = name == "Frodo"
     end
   
     def celebrate_birthday
@@ -107,6 +106,9 @@ class Hobbit
   
     def is_old
       @age >= 101
+    end
+    def @has_ring?
+        @name == "Frodo"
     end
   end
 
